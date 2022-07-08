@@ -23,15 +23,13 @@
 int main (void)
 {
 	//enable the clk of tha pin
-	RCC_AHB1ENR_ADDR |= (1<<3);  //bit 0 enable the clk for gpio A
+	RCC_AHB1ENR_ADDR |= (1<<3);  //bit 3 enable the clk for gpio D
 	
 	//configure the gpio pin to output mode using mode reg
-	GPIOD_MODER  |= (1<< (12 * 2)); //set 12 and 13th pin to 0x01 to 6th pin output
+	GPIOD_MODER  |= (1<< (12 * 2)); //set 24 and 25th bit to 0x01 to 12th pin output
 	
 	//use data reg of GPIO port to write or read
-	GPIOD_ODR  |=(1<<12);  //6TH Pin data 1 
-	
-	
+	GPIOD_ODR  |=(1<<12);  //12TH Pin data 1 
 	
 	return 0;
 }	
